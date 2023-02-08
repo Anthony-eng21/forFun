@@ -1,0 +1,162 @@
+*::after, *::before {
+    box-sizing: border-box;
+}
+
+:root {
+    --cell-size: 140px;
+    --mark-size: calc(var(--cell-size) * .13)
+
+}
+
+body {
+    margin: 0;
+    background-image: url(./img/suicideboysbackground.webp);
+    background-size: 100% 100%;
+    font-family: fantasy, sans-serif;
+    text-shadow: 1px 1px 2px red, 0 0 1em blue, 0 0 0.2em blue;
+}
+
+.header {
+    max-width: 100%;
+    max-height: 50px;
+    text-align: center;
+    font-size: 100px;
+    margin-top: 1rem;
+    filter: drop-shadow(0 -1mm 3mm rgb(89, 0, 117));
+}
+
+.board {
+    width: 100vw;
+    height: 100vh;
+    display: grid;
+    justify-content: center;
+    align-content: center;
+    justify-items: center;
+    align-items: center;
+    grid-template-columns: repeat(3, auto);
+    filter: drop-shadow(0 -1mm 3mm rgb(89, 0, 117));
+}
+
+.cell {
+    width: var(--cell-size);
+    height: var(--cell-size); 
+    border: 2px dashed rgba(128, 128, 128, 0.734);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    
+}
+
+cell.x img {
+    width: var(--cell-size);
+    height: var(--cell-size);
+    align-self: center;
+    border-radius: 50%;/* circular images :0 */
+}
+ 
+cell.circle img {
+    width: var(--cell-size);
+    height: var(--cell-size);
+    align-self: center;
+    border-radius: 50%;/* circular images :0 */
+}
+
+img{
+    width: var(--cell-size);
+    height: var(--cell-size);
+    align-self: center;
+    border-radius: 50%;/* circular images :0 */
+    display: flex;
+    width: 140px;
+    /* height:140px; */
+    align-self: center;
+    border-radius: 50%;/* circular images :0 */
+    justify-content: center;
+    display: block;
+}
+
+/******** this is for removing the border around the sides *********/
+.cell:first-child,
+.cell:nth-child(2),
+.cell:nth-child(3) {
+border-top: dashed rgb(128, 128, 128);
+}
+
+.cell:nth-child(3n + 1) {
+    border-left: dashed rgb(128, 128, 128);
+}
+
+.cell:nth-child(3n + 3) {
+    border-right: dashed rgb(128, 128, 128);
+}
+
+.cell:last-child,
+.cell:nth-child(8),
+.cell:nth-child(7) {
+    border-bottom: dashed rgb(128, 128, 128);
+ }
+/* hover affect with cursor */
+
+
+.cell.x,
+.cell.circle {
+    cursor: not-allowed;
+    background-image: url(./img/37cc4c1b8575ca03be97bc395214ac9e.png);
+    background-size: cover;
+    width:var(--cell-size);;
+    height:var(--cell-size);;
+    align-self: center;
+    border-radius: 50%;/* circular images :0 */
+    justify-content: center;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-bottom: 10px;
+    padding-top: 10px;
+}
+
+.cell.x {
+    background-image: url(./img/scrim.jpg);
+    width:var(--cell-size);
+    height:var(--cell-size);
+    align-self: center;
+    border-radius: 50%;/* circular images :0 */
+    justify-content: center;
+    
+}
+
+
+ 
+ .winning-message {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(106, 3, 107, 0.893);
+    justify-content: center;
+    align-items: center;
+    color: rgba(#ff000039, green, blue, alpha);
+    font-size: 5rem;
+    flex-direction: column;
+ }
+
+ .winning-message button {
+    font-size: 3rem;
+    background-color: lightpink;
+    padding: .25em .5em;
+    cursor: pointer;
+    text-shadow: 1px 1px 2px red, 0 0 1em blue, 0 0 0.2em blue;
+ }
+
+ .winning-message button:hover {
+    background-color: goldenrod;
+    color: white;
+    border-color: black;
+    text-shadow: 1px 1px 2px red, 0 0 1em blue, 0 0 0.2em blue;
+ }
+
+ .winning-message.show {
+    display: flex;
+ }
