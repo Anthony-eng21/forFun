@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script
+  src="https://code.jquery.com/jquery-3.6.1.min.js"
+  integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ="
+  crossorigin="anonymous"></script>
+    <title>Aliens</title>
+    <style>
+        canvas{
+            height: 80vh;
+            box-shadow: black 20px 10px 50px;
+        }
+        
+        h1{
+            margin:0px;
+            margin-bottom: 10px;
+            font-size: 2.7em;
+            font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+            color: rgba(231, 100, 12, 0.7);
+        }
+
+        body{
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            padding: 0px;
+            margin: 0px;
+            height: 50vh;
+            background: linear-gradient(
+            0deg,
+            rgb(248, 11, 213) 0%,
+            rgba(0, 0, 0, 0.41) 100%
+            );
+            background-color: rgb(9, 9, 250);
+        }
+
+        
+        #reload img{
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            padding: auto;
+            margin-left: 5px;
+            margin-top: 5px;
+            /* border: solid black 4px; */
+
+        }
+
+        small {
+            color: purple;
+            font-weight: bolder;
+            justify-content: center;
+            /* margin-left: 50px; */
+        }
+
+        footer {
+            color: rgb(0, 0, 0);
+            font-size: 1.5rem;
+            font-weight: bolder;
+            padding-top: 1rem;
+            padding-bottom: 1rem;
+            padding-left: 1rem;
+            padding-right: 1rem;
+            border: 10px solid rgb(204, 16, 16);
+            
+        }
+        
+    </style>
+</head>
+<body>
+    <h1>Alien Spankies</h1>
+    <canvas id="game"></canvas>
+    <script type="module" src="index.js"></script>
+    
+    <div id="reload">
+        <img src="img/img/enemy2.png" class="reload-player">
+        
+    </div>
+    <script>  //only thing written in jQuery 
+        $(document).on('click', '#reload > img', function() {
+                location.reload();
+        });
+
+    // eventEnter = $(document).ready(function(){
+    //     $("#reload").keyup(function(e){
+    //         if(event.which === 13) {
+    //             $("#reload").click();
+    //         }
+    //     }) 
+    // });
+    // debugger; //work on this later 
+    // console.log("#reload");
+    </script>
+    <small style="color:rgb(87, 4, 87);">restart game</small> <br>
+</body>
+<!-- <footer>
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/qCBiKJbLcFI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe><br>
+The source and its thorough game logic is in this video</footer> -->
+</html>
