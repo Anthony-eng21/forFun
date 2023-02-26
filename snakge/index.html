@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>anthony's snake</title>
+    <style>
+      body {
+        background: url(./img/ship.jpg) no-repeat center center;
+        background-size: cover;
+        height: 129.5vh;
+        width: 122.5vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: auto;
+        /* background-color: rgba(0, 26, 92, 0.725); */
+        position: relative;
+        filter: drop-shadow(0 -1mm 3mm rgb(89, 0, 117));
+        flex-direction: column;
+      }
+      /*https://wallpaperaccess.com/retro-sci-fi*/
+      /*above is the url for the background image used*/
+      img {
+        display: block;
+
+        max-width: 100%;
+        max-height: 100%;
+      }
+
+      #game-board {
+        background-color: rgba(192, 10, 247, 0.3);
+        width: 72.5vmin;
+        height: 72.5vmin;
+        display: grid;
+        grid-template-rows: repeat(21, 1fr);
+        grid-template-columns: repeat(21, 1fr);
+        border: 0.5vmin solid rgba(5, 23, 105, 0.7);
+        filter: drop-shadow(0 -1mm 3mm rgb(89, 0, 117));
+      }
+
+      .snake {
+        background-color: hsl(119, 84%, 29%);
+        border: 0.5vmin solid black;
+      }
+
+      .food {
+        background-color: hsl(0, 85%, 26%);
+        border: 0.5vmin solid black;
+        filter: drop-shadow(0 -1mm 3mm rgb(89, 0, 117));
+      }
+
+      .headtxt {
+        font-size: x-large;
+        text-shadow: rgba(9, 12, 12, 0.627) 0 -6px;
+        filter: drop-shadow(0 -1mm 3mm rgb(89, 0, 117));
+        color: rgba(229, 218, 232, 0.775);
+        padding-top: 1.3em;
+        -webkit-margin-before: 0em;
+        -webkit-margin-after: 0em;
+        justify-content: center;
+        position: absolute;
+        top: 0;
+      }
+      .counter-text {
+        font-size: large;
+        text-shadow: rgba(22, 23, 23, 0.627) 0 -6px;
+        filter: drop-shadow(0 -1mm 3mm rgb(89, 0, 117));
+        color: rgba(229, 218, 232, 0.775);
+        padding: 2rem;
+      }
+      .counter {
+        text-align: center;
+        width: auto;
+        padding: 0 auto;
+      }
+    </style>
+    <script src="./game.js" defer type="module"></script>
+  </head>
+  <body>
+    <div class="headtxt">
+      <h2 style="font-style: italic">live laugh snake</h2>
+    </div>
+    <div class="container" id="game-board"></div>
+    <div class="counter">
+      <h3 class="counter-text"></h3>
+    </div>
+  </body>
+</html>
